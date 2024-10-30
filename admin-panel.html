@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .admin-panel {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .admin-panel h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .admin-panel form {
+            display: flex;
+            flex-direction: column;
+        }
+        .admin-panel input[type="text"], 
+        .admin-panel input[type="file"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .admin-panel button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer; /* Указатель при наведении */
+            transition: transform 0.1s, background-color 0.2s; /* Плавный переход */
+        }
+
+        .admin-panel button:active {
+            transform: scale(0.95); /* Эффект нажатия */
+        }
+
+        .admin-panel button:hover {
+            background-color: #444; /* Темнее при наведении */
+        }
+        .header-button {
+    padding: 8px 15px;
+    margin-right: 20px;
+    color: white;
+    background-color: #555;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="Glavnaya.html" class="header-button">Назад</a>
+    </header>
+        
+
+<div class="admin-panel">
+    <h2>Панель администратора</h2>
+    <form action="/upload-material" method="post" enctype="multipart/form-data">
+        <h3>Добавить материал:</h3>
+        <input type="text" name="material-title" placeholder="Название материала" required>
+        <input type="file" name="material-file" required>
+        <button type="submit">Загрузить</button>
+
+    </form>
+
+    <form action="/upload-achievement" method="post" enctype="multipart/form-data">
+        <h3>Добавить фото достижения:</h3>
+        <input type="file" name="achievement-photo" required>
+        <button type="submit">Загрузить</button>
+    </form>
+
+    <form action="/update-contacts" method="post">
+        <h3>Обновить контакты:</h3>
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="text" name="phone" placeholder="Телефон" required>
+        <button type="submit">Обновить</button>
+    </form>
+</div>
+
+</body>
+</html>
